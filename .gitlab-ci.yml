@@ -3,15 +3,15 @@ variables:
   DOCKER_DRIVER: overlay2
 
 stages:
-  - test
+  # - test
   - build
 
-test:
-  image: node:10.15-alpine
-  stage: test
-  before_script:
-    - "npm install"
-  script: "CI=true npm run test"
+# test:
+#   image: node:10.15-alpine
+#   stage: test
+#   before_script:
+#     - "npm install"
+#   script: "CI=true npm run test"
 
 build:
   image: docker:stable
