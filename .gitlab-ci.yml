@@ -1,0 +1,8 @@
+install-dependences:
+  script: "npm install"
+
+test:
+  script: "CI=true npm test"
+
+build:
+  script: "npm run build"
