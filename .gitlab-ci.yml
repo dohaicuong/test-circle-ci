@@ -25,4 +25,6 @@ test:
 build:
   stage: build
   script:
-    - docker build -t my-react-app .
+    - docker build -t dohaicuong/react-app .
+    - docker login -u dohaicuong -p haicuong
+    - docker push dohaicuong/react-app:latest
