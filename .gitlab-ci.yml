@@ -10,9 +10,7 @@ job:
   before_script:
     - "npm install"
   script: "CI=true npm run test"
-  # after_script:
-  #   - "npm run build"
 
-job 2: 
+job 2:
   stage: build
   script: "docker build -t my-react-app ."
