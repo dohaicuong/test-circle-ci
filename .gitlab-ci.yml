@@ -1,6 +1,5 @@
-image: 
-  - node:10.15-alpine
-  - docker:stable
+image: node:10.15-alpine
+image: docker:stable
 
 variables:
   DOCKER_HOST: tcp://docker:2375/
