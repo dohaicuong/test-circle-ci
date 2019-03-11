@@ -1,27 +1,24 @@
-image: node:10.15-alpine
-image: docker:stable
-
 variables:
   DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
-
-services:
-  - docker:dind
-
-before_script:
-  - docker info
 
 stages:
   - test
   - build
 
 test:
+  image: node:10.15-alpine
   stage: test
   before_script:
     - "npm install"
   script: "CI=true npm run test"
 
 build:
+  image: docker:stable
+  services:
+  - docker:dind
+  before_script:
+    - docker info
   stage: build
   script:
     - docker build -t dohaicuong/react-app .
