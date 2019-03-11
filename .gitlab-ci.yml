@@ -1,3 +1,5 @@
+image: node:10.15-alpine
+
 install-dependences:
   script: "npm install"
 
