@@ -13,4 +13,10 @@ job:
 
 job 2:
   stage: build
-  script: "docker build -t my-react-app ."
+  before_script:
+   - docker info
+
+  build_image:
+   script:
+     - docker build -t my-react-app .
+     # - docker run my-docker-image /script/to/run/tests
