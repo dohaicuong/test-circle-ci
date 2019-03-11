@@ -7,7 +7,8 @@ stages:
 
 job 1:
   stage: install_dependences
-  before_script: npm install --global yarn
+  before_script:
+    - "npm install --global yarn"
   script: yarn
 
 job 2:
