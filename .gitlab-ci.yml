@@ -1,20 +1,9 @@
 image: node:10.15-alpine
 
-stages:
-  - install_dependences
-  - test
-  - build
-
-job 1:
-  stage: install_dependences
+job:
   before_script:
-    - "npm install --global yarn"
-  script: yarn
-
-job 2:
-  stage: test
-  script: CI=true yarn test
-
-job 3:
-  stage: build
-  script: yarn build
+    - "npm install"
+  script:
+    - "CI=true npm run test"
+  after_script:
+    - "npm run build"
