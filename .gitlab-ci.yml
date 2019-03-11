@@ -1,10 +1,18 @@
 image: node:10.15-alpine
 
-install-dependences:
-  script: "npm install"
+stages:
+  - install_dependences
+  - test
+  - build
 
-test:
-  script: "CI=true npm test"
+job 1:
+  stage: install_dependences
+  script: npm install
 
-build:
-  script: "npm run build"
+job 2:
+  stage: test
+  script: CI=true npm test
+
+job 3:
+  stage: build
+  script: npm run build
